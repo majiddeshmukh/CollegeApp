@@ -33,10 +33,13 @@
         android:id="@+id/datarno"/>
 
     <Button
+        android:id="@+id/datasubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
         android:text="Submit"
-        android:id="@+id/datasubmit"
-        android:layout_gravity="center_horizontal"/>
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
 </LinearLayout>

@@ -40,9 +40,6 @@ class MainActivity : AppCompatActivity() {
 
         if(currentUser != null){
             startActivity(Intent(this, DashboardActivity::class.java))
-        } else {
-            Toast.makeText(baseContext, "Login failed.",
-                Toast.LENGTH_SHORT).show()
         }
 
     }

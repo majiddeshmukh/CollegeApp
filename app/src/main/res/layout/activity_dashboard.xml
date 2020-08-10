@@ -7,9 +7,12 @@
     tools:context=".DashboardActivity">
 
     <Button
+        android:id="@+id/dfill"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button"
         android:text="Fill up your details"
-        android:id="@+id/dfill"/>
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
 </LinearLayout>
