@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
 
-    <Button
-        android:id="@+id/dfill"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/button"
-        android:text="Fill up your details"
-        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
-</LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:background="@color/colorRed"
+        app:itemTextColor="@color/colorWhite"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottomenu"
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/colorWhite"/>
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/navbar" />
+
+
+</RelativeLayout>
