@@ -51,17 +51,15 @@ class DataActivity : AppCompatActivity() {
             year.error = "Please enter a year"
             return
         }
-<<<<<<< HEAD
         if(sdept.isNullOrEmpty()){
             dept.error = "Please enter a department"
             return
         }
         if(srn.isNullOrEmpty()){
             rno.error = "Please enter a roll number"
-=======
+
         if(sdept.isEmpty()){
             dept.error = "Please enter your department"
->>>>>>> 8c15bc4308d6204d4b79cecbdc553fb2e1ed29ea
             return
         }
 
