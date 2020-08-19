@@ -27,5 +27,15 @@
         android:text="Fill up your details"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/calc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Convert CGPA to Percentage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dfill" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
