@@ -30,25 +30,33 @@ class DataActivity : AppCompatActivity() {
         }
 
     }
-
     private fun saveData(){
+
         val sname = name.text.toString().trim()
         val syear = year.text.toString().trim()
         val sdept = dept.text.toString().trim()
         val srn = rno.text.toString().trim()
-        val srno = Integer.parseInt(srn)
+        var srno: Int? = null
+        if(srn != ""){
+            var srno = Integer.parseInt(srn)
+        }
 
-        if(sname.isEmpty()){
+
+        if(sname.isNullOrEmpty()){
             name.error = "Please enter a name"
             return
         }
 
-        if(syear.isEmpty()){
+        if(syear.isNullOrEmpty()){
             year.error = "Please enter a year"
             return
         }
-        if(sdept.isEmpty()){
-            dept.error = "Please enter a name"
+        if(sdept.isNullOrEmpty()){
+            dept.error = "Please enter a department"
+            return
+        }
+        if(srn.isNullOrEmpty()){
+            rno.error = "Please enter a roll number"
             return
         }
 
@@ -56,12 +64,11 @@ class DataActivity : AppCompatActivity() {
         val ref = FirebaseDatabase.getInstance().getReference("Data")
         val dataId = ref.push().key!!
 
-        val data = Data(dataId, sname, syear, sdept, srno)
+        val data = Data(dataId, sname, syear, sdept, srno!!)
 
         ref.child(dataId).setValue(data).addOnCompleteListener {
             Toast.makeText(applicationContext, "Data Saved Successfully", Toast.LENGTH_LONG).show()
         }
-
     }
 
 }

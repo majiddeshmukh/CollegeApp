@@ -35,11 +35,11 @@ class HomeFragment : Fragment() {
 
 
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
          dfill.setOnClickListener {
-            //FirebaseAuth.getInstance().signOut()
             val intent = Intent(this@HomeFragment.context, DataActivity::class.java)
             startActivity(intent)
         }
