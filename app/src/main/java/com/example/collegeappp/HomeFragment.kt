@@ -44,6 +44,11 @@ class HomeFragment : Fragment() {
             val intent = Intent(this@HomeFragment.context, DataActivity::class.java)
             startActivity(intent)
         }
+
+        calc.setOnClickListener {
+            val intent = Intent(this@HomeFragment.context, ConvertActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateView(

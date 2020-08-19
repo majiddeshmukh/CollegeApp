@@ -48,7 +48,7 @@ class DataActivity : AppCompatActivity() {
             return
         }
         if(sdept.isEmpty()){
-            dept.error = "Please enter a name"
+            dept.error = "Please enter your department"
             return
         }
 
