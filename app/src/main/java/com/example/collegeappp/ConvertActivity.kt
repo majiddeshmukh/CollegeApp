@@ -22,13 +22,13 @@ class ConvertActivity : AppCompatActivity() {
         val ccg = cgpa.text.toString().trim()
 
         if (cgp<7 && cgp>0){
-            val resultt = ((7.1*cgp)+12).toString()
-            cresult.text = resultt + "%"
+            val resultt = ((7.1*cgp)+12)
+            cresult.text = String.format("%.2f", resultt)+ "%"
         }
 
         else if (cgp>=7 && cgp<=10){
-            val resultt = ((7.4*cgp)+12).toString()
-            cresult.text = resultt + "%"
+            val resultt = ((7.4*cgp)+12)
+            cresult.text = String.format("%.2f", resultt) + "%"
         }
 
         else{

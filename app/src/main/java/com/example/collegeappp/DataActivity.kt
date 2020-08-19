@@ -55,11 +55,8 @@ class DataActivity : AppCompatActivity() {
             dept.error = "Please enter a department"
             return
         }
-        if(srn.isNullOrEmpty()){
+        if(srn.isNullOrEmpty()) {
             rno.error = "Please enter a roll number"
-
-        if(sdept.isEmpty()){
-            dept.error = "Please enter your department"
             return
         }
 
