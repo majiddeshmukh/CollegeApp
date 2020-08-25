@@ -1,34 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"
-    android:orientation="vertical">
+    tools:context=".LoginActivity">
 
-    <EditText
+
+    <View
+        android:id="@+id/logview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/logback"
+        tools:layout_editor_absoluteX="43dp"
+        tools:layout_editor_absoluteY="19dp" />
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:layout_marginTop="108dp"
+        android:fontFamily="@font/sf_heavy"
+        android:text="LOGIN"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/logview" />
+
+    <EditText
+        android:id="@+id/login_email"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="274dp"
+        android:background="@drawable/textbox"
+        android:drawableLeft="@drawable/email"
+        android:fontFamily="@font/sf_medium"
+        android:hint=" Email"
         android:inputType="textEmailAddress"
-        android:id="@+id/login_email"/>
+        app:layout_constraintStart_toStartOf="@+id/logview"
+        app:layout_constraintTop_toTopOf="@+id/logview" />
 
     <EditText
-        android:layout_width="match_parent"
+        android:id="@+id/login_password"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="Password"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="338dp"
+        android:background="@drawable/textbox"
+        android:drawableLeft="@drawable/passw"
+        android:fontFamily="@font/sf_medium"
+        android:hint=" Password"
         android:inputType="textPassword"
-        android:id="@+id/login_password"/>
+        app:layout_constraintStart_toStartOf="@+id/logview"
+        app:layout_constraintTop_toTopOf="@+id/logview" />
 
     <Button
         android:id="@+id/login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="418dp"
         android:background="@drawable/button"
         android:text="LOGIN"
-        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        app:layout_constraintStart_toStartOf="@+id/logview"
+        app:layout_constraintTop_toTopOf="@+id/logview" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
