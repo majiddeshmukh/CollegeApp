@@ -36,10 +36,9 @@ class DataActivity : AppCompatActivity() {
         val syear = year.text.toString().trim()
         val sdept = dept.text.toString().trim()
         val srn = rno.text.toString().trim()
-        var srno: Int? = null
-        if(srn != ""){
-            var srno = Integer.parseInt(srn)
-        }
+
+
+        var srno = Integer.parseInt(srn)
 
 
         if(sname.isNullOrEmpty()){

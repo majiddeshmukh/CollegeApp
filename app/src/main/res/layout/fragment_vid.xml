@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".VidFragment">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/vidview"
+        android:background="@drawable/vidback"/>
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"

@@ -1,10 +1,21 @@
 package com.example.collegeappp
 
+import android.app.Activity.RESULT_OK
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.UploadTask
+import kotlinx.android.synthetic.main.fragment_ass.*
+import kotlinx.android.synthetic.main.fragment_home.*
+import java.lang.Exception
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,6 +28,9 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class AssFragment : Fragment() {
+    val PDF : Int = 0;
+    lateinit var uri : Uri
+    lateinit var mStorage: StorageReference
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -27,6 +41,42 @@ class AssFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mStorage = FirebaseStorage.getInstance().getReference("Upload")
+
+        upload_ass.setOnClickListener {
+            view: View? -> val intent = Intent()
+            intent.setType("application/pdf")
+            intent.setAction(Intent.ACTION_GET_CONTENT)
+            startActivityForResult(Intent.createChooser(intent, "Select PDF"), PDF)
+        }
+
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode == RESULT_OK) {
+            if(requestCode == PDF) {
+                //uri = data!!.data
+                upload()
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    private fun upload(){
+        var mReference = mStorage.child("Assignments")
+        try {
+            mReference.putFile(uri).addOnSuccessListener {
+                Toast.makeText(this@AssFragment.context, "Successfully Uploaded", Toast.LENGTH_LONG).show()
+            }
+        }catch (e: Exception){
+            Toast.makeText(this@AssFragment.context, e.toString(), Toast.LENGTH_LONG).show()
+        }
+
     }
 
     override fun onCreateView(

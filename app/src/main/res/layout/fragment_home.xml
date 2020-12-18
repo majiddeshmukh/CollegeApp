@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/homeview"
+        android:background="@drawable/homeback"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -13,6 +19,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="160dp"
         android:text="Home"
+        android:fontFamily="@font/sf_heavy"
         android:textColor="@color/colorRed"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +31,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
+        android:background="@color/colorRed"
         android:text="Fill up your details"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="@font/sf_medium"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -32,7 +42,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:background="@color/colorRed"
         android:text="Convert CGPA to Percentage"
+        android:textColor="@color/colorWhite"
+        android:fontFamily="@font/sf_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dfill" />
