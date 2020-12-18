@@ -7,6 +7,10 @@ android {
     compileSdkVersion 29
     buildToolsVersion "30.0.1"
 
+    kotlinOptions {
+        jvmTarget = 1.8
+    }
+
     defaultConfig {
         applicationId "com.example.collegeappp"
         minSdkVersion 21

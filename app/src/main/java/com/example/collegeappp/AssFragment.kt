@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.net.toUri
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.UploadTask
@@ -58,17 +59,20 @@ class AssFragment : Fragment() {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK) {
             if(requestCode == PDF) {
-                //uri = data!!.data
+                if (data!=null){
+                    uri=data.data!!
+                }
                 upload()
             }
         }
-        super.onActivityResult(requestCode, resultCode, data)
+
     }
 
     private fun upload(){
-        var mReference = mStorage.child("Assignments")
+        var mReference = mStorage.child(uri.lastPathSegment.toString())
         try {
             mReference.putFile(uri).addOnSuccessListener {
                 Toast.makeText(this@AssFragment.context, "Successfully Uploaded", Toast.LENGTH_LONG).show()
